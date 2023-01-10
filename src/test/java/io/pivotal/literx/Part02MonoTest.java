@@ -1,6 +1,7 @@
 package io.pivotal.literx;
 
 import java.time.Duration;
+import java.util.function.Function;
 
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Mono;
@@ -52,6 +53,7 @@ public class Part02MonoTest {
 	@Test
 	public void error() {
 		Mono<String> mono = workshop.errorMono();
+
 		StepVerifier.create(mono)
 				.verifyError(IllegalStateException.class);
 	}
