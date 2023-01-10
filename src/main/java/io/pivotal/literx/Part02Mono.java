@@ -2,6 +2,8 @@ package io.pivotal.literx;
 
 import reactor.core.publisher.Mono;
 
+import java.util.function.Supplier;
+
 /**
  * Learn how to create Mono instances.
  *
@@ -14,14 +16,14 @@ public class Part02Mono {
 
 	// TODO Return an empty Mono
 	Mono<String> emptyMono() {
-		return null;
+		return Mono.empty();
 	}
 
 //========================================================================================
 
 	// TODO Return a Mono that never emits any signal
 	Mono<String> monoWithNoSignal() {
-		return null;
+		return Mono.never();//consultar un caso practico
 	}
 
 //========================================================================================
@@ -35,7 +37,7 @@ public class Part02Mono {
 
 	// TODO Create a Mono that emits an IllegalStateException
 	Mono<String> errorMono() {
-		return null;
+		return Mono.error(new IllegalStateException());
 	}
 
 }

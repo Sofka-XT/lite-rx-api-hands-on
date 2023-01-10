@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
+import java.util.function.Consumer;
+
 /**
  * Learn how to create Flux instances.
  *
@@ -29,6 +31,7 @@ public class Part01FluxTest {
 	@Test
 	public void fromValues() {
 		Flux<String> flux = workshop.fooBarFluxFromValues();
+
 		StepVerifier.create(flux)
 				.expectNext("foo", "bar")
 				.verifyComplete();
